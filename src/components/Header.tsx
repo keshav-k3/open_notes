@@ -3,9 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
+import DarkModeToggle from "./DarkModeToggle";
+import LogOutButton from "./LogOutButton";
 
 function Header() {
-  const user = null;
+  const user = 1;
 
   return (
     <header
@@ -29,7 +31,7 @@ function Header() {
       </Link>
       <div className="flex gap-4">
         {user ? (
-          "Logout"
+          <LogOutButton />
         ) : (
           <>
             <Button asChild>
@@ -42,6 +44,7 @@ function Header() {
             </Button>
           </>
         )}
+        <DarkModeToggle />
       </div>
     </header>
   );
